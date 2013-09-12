@@ -1,4 +1,4 @@
-Copyright 2010, 2012 Dan Frist, Jesse Lang
+Copyright 2010, 2012 - Dan Frist, Jesse Lang
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -14,10 +14,10 @@ Copyright 2010, 2012 Dan Frist, Jesse Lang
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 === Plugin Name ===
-Contributors: Dan Frist
+Contributors: Dan Frist, Jesse Lang
 Tags: bible, youversion
 Requires at least: 2.0
-Tested up to: 2.9.2
+Tested up to: 3.5.2
 
 This plugin is used to link scripture references to YouVersion.com.
 
