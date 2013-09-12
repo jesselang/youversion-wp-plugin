@@ -41,19 +41,35 @@ function yv_generate_links( $text ) {
 				// change book name to abbreviated book name
 				foreach( $osis as $key=>$value ) {
 					if( stristr( $row_exploded[0], $key ) != false ) {
-						$reference_link = str_replace( $key, $value . '/', $row_exploded[0] );
+						$reference_link = str_replace( $key, $value . '.', $row_exploded[0] );
 						break;
 					}
 				}
 
 				// change : to /
-				$reference_link = str_replace( ':', '/', $reference_link );
+				$reference_link = str_replace( ':', '.', $reference_link );
+
+				// get version if specified
+				$last_dot = strrpos( $reference_link, '.');
+                                $last_space = strrpos( $reference_link, ' ', $last_dot + 1);				
+
+				if( $last_space === false ) {
+					$version = get_option( 'yv_bible_version' );
+				} else {
+					$version_length = strlen($reference_link) - $last_space - 1;
+					if( $version_length >= 3 && $version_length <= 6 ) {
+						$version = strtolower(substr( $reference_link, $last_space + 1 ));
+						$reference_link = substr( $reference_link, 0, $last_space);
+					} else {
+						$version = get_option( 'yv_bible_version');
+					}
+				}
 
 				// remove any spaces
 				$reference_link = str_replace( ' ', '', $reference_link );
 
 				// put the text in the tag in a link
-				$row_exploded[0] = '<a target="_blank" href="http://www.youversion.com/bible/' . get_option( 'yv_bible_version' ) . '/' . $reference_link . '">' . $row_exploded[0] . '</a>';
+				$row_exploded[0] = '<a target="_blank" href="http://www.youversion.com/bible/' . $version . '/' . $reference_link . '">' . $row_exploded[0] . '</a>';
 
 				// put the link and any text after it back together
 				$row = implode( $row_exploded );
