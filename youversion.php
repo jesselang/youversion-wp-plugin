@@ -2,15 +2,16 @@
 /**
  * @package YouVersion
  * @author Dan Frist
- * @version 2
+ * @author Jesse Lang
+ * @version 2.1
  */
 /*
 Plugin Name: YouVersion
 Plugin URI: http://www.youversion.com/
 Description: This plugin is used to link scripture references to YouVersion.com
-Author: Dan Frist
-Version: 2
-Author URI: http://twitter.com/danfrist
+Author: Dan Frist; with a modest contribution by Jesse Lang
+Version: 2.1
+Author URI: http://twitter.com/danfrist; http://jesselang.com/
 Text Domain: youversion
 */
 
