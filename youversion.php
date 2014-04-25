@@ -70,7 +70,7 @@ function yv_generate_links( $text ) {
 				$reference_link = str_replace( ' ', '', $reference_link );
 
 				// put the text in the tag in a link
-				$row_exploded[0] = '<a target="_blank" href="http://www.youversion.com/bible/' . $version . '/' . $reference_link . '">' . $row_exploded[0] . '</a>';
+				$row_exploded[0] = '<a target="_blank" href="http://bible.com/bible/' . $version . '/' . $reference_link . '">' . $row_exploded[0] . '</a>';
 
 				// put the link and any text after it back together
 				$row = implode( $row_exploded );
